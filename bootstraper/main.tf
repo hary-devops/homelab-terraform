@@ -2,7 +2,7 @@
 resource "spacelift_stack" "authentik" {
   administrative    = false
   autodeploy        = true
-  branch            = "master"
+  branch            = "main"
   description       = "Provision Authentik"
   name              = "Authentik"
   project_root      = "environemnt/authentik"
