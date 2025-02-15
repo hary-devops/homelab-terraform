@@ -4,8 +4,8 @@ resource "spacelift_stack" "harvester" {
   autodeploy        = true
   branch            = "main"
   description       = "Manage Harvester"
-  name              = "Authentik"
-  project_root      = "environment/authentik"
+  name              = "Harvester"
+  project_root      = "environment/harvester"
   repository        = "homelab-terraform"
   terraform_version = "1.3.0"
   space_id          = "root"
@@ -13,7 +13,7 @@ resource "spacelift_stack" "harvester" {
 
 
 resource "spacelift_environment_variable" "harvester-kubeconfig" {
-  stack_id    = spacelift_stack.authentik.id
+  stack_id    = spacelift_stack.harvester.id
   name        = "TF_VAR_harvester_kubeconfig"
   write_only  = false
   description = "Harvester Kubeconfig Path"
@@ -21,7 +21,7 @@ resource "spacelift_environment_variable" "harvester-kubeconfig" {
 
 
 resource "spacelift_environment_variable" "harvester-kubecontext" {
-  stack_id    = spacelift_stack.authentik.id
+  stack_id    = spacelift_stack.harvester.id
   name        = "TF_VAR_harvester_kubecontext"
   write_only  = false
   description = "Harvester Kubecontext"
