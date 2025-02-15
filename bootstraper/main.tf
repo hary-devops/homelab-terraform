@@ -13,7 +13,7 @@ resource "spacelift_stack" "authentik" {
 
 
 resource "spacelift_environment_variable" "authentik-token" {
-  stack_id    = spacelift_stack.authentik.space_id
+  stack_id    = spacelift_stack.authentik.id
   name        = "AUTHENTIK_TOKEN"
   write_only  = false
   description = "Authentik Token"
