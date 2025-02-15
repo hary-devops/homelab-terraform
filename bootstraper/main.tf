@@ -5,7 +5,7 @@ resource "spacelift_stack" "authentik" {
   branch            = "main"
   description       = "Provision Authentik"
   name              = "Authentik"
-  project_root      = "environemnt/authentik"
+  project_root      = "environment/authentik"
   repository        = "homelab-terraform"
   terraform_version = "1.3.0"
   space_id          = "root"
