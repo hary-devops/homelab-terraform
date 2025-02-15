@@ -1,9 +1,9 @@
 # Terraform stack using github.com as VCS
-resource "spacelift_stack" "authentik" {
+resource "spacelift_stack" "harvester" {
   administrative    = false
   autodeploy        = true
   branch            = "main"
-  description       = "Provision Authentik"
+  description       = "Manage Harvester"
   name              = "Authentik"
   project_root      = "environment/authentik"
   repository        = "homelab-terraform"
@@ -12,9 +12,17 @@ resource "spacelift_stack" "authentik" {
 }
 
 
-resource "spacelift_environment_variable" "authentik-token" {
+resource "spacelift_environment_variable" "harvester-kubeconfig" {
   stack_id    = spacelift_stack.authentik.id
-  name        = "AUTHENTIK_TOKEN"
+  name        = "TF_VAR_harvester_kubeconfig"
   write_only  = false
-  description = "Authentik Token"
+  description = "Harvester Kubeconfig Path"
+}
+
+
+resource "spacelift_environment_variable" "harvester-kubecontext" {
+  stack_id    = spacelift_stack.authentik.id
+  name        = "TF_VAR_harvester_kubecontext"
+  write_only  = false
+  description = "Harvester Kubecontext"
 }
