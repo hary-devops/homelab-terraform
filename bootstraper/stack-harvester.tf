@@ -18,6 +18,7 @@ resource "spacelift_environment_variable" "harvester-kubeconfig" {
   name        = "TF_VAR_harvester_kubeconfig"
   write_only  = false
   description = "Harvester Kubeconfig Path"
+  value       = "~/.kube/homelab-config.yaml"
 }
 
 
@@ -26,4 +27,5 @@ resource "spacelift_environment_variable" "harvester-kubecontext" {
   name        = "TF_VAR_harvester_kubecontext"
   write_only  = false
   description = "Harvester Kubecontext"
+  value       = "local"
 }
