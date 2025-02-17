@@ -9,6 +9,7 @@ resource "spacelift_stack" "harvester" {
   repository        = "homelab-terraform"
   terraform_version = "1.3.0"
   space_id          = "root"
+  worker_pool_id    = "01JM7DZSZR0AZB8X5ZFD97W8KZ"
 }
 
 
