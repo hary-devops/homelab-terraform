@@ -8,8 +8,9 @@ resource "harvester_image" "k3os" {
 
 
 resource "harvester_image" "alpine" {
-  name        = "alpine"
-  namespace   = "harvester-public"
-  source_type = "download"
-  url         = "https://dl-cdn.alpinelinux.org/alpine/latest-stable/releases/x86_64/alpine-standard-3.18.4-x86_64.iso"
+  name         = "alpine"
+  namespace    = "harvester-public"
+  display_name = "alpine"
+  source_type  = "download"
+  url          = "https://dl-cdn.alpinelinux.org/alpine/latest-stable/releases/x86_64/alpine-standard-3.18.4-x86_64.iso"
 }
