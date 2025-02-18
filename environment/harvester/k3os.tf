@@ -12,5 +12,5 @@ resource "harvester_image" "alpine" {
   namespace    = "harvester-public"
   display_name = "alpine"
   source_type  = "download"
-  url          = "https://dl-cdn.alpinelinux.org/alpine/latest-stable/releases/x86_64/alpine-standard-3.18.4-x86_64.iso"
+  url          = "https://dl-cdn.alpinelinux.org/alpine/latest-stable/releases/x86_64/alpine-standard-3.21.0-x86_64.iso"
 }
