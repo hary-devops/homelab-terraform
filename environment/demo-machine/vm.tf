@@ -44,7 +44,7 @@ resource "harvester_virtualmachine" "alpine" {
   }
 
   cloudinit {
-    user_data_secret_name    = data.harvester_cloudinit_secret.vm-cloud-init
+    user_data_secret_name    = data.harvester_cloudinit_secret.vm-cloud-init.name
     network_data_secret_name = data.harvester_cloudinit_secret.network-config-alpine.name
 
   }
