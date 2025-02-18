@@ -21,7 +21,7 @@ resource "harvester_virtualmachine" "alpine" {
 
   network_interface {
     name           = "nic-1"
-    wait_for_lease = true    type           = "bridge"
+    wait_for_lease = true              = "bridge"
   }
 
   disk {
