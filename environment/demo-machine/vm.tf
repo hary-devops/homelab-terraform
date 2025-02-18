@@ -31,7 +31,7 @@ resource "harvester_virtualmachine" "alpine" {
     bus        = "virtio"
     boot_order = 1
 
-    image       = data.harvester_image.alpine
+    image       = "harvester-public/alpine"
     auto_delete = true
   }
 
