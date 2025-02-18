@@ -22,6 +22,8 @@ resource "harvester_virtualmachine" "alpine" {
   network_interface {
     name           = "nic-1"
     wait_for_lease = true
+    network        = "default/homelab-network"
+    type           = "bridge"
   }
 
   disk {
