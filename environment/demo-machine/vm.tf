@@ -11,24 +11,22 @@ resource "harvester_virtualmachine" "alpine" {
   cpu    = 2
   memory = "2Gi"
 
-  efi         = true
-  secure_boot = true
+  efi         = false
+  secure_boot = false
 
   run_strategy    = "RerunOnFailure"
   hostname        = "alpine"
   reserved_memory = "100Mi"
-  machine_type    = "q35"
+  # machine_type    = "q35"
 
   network_interface {
     name           = "nic-1"
-    wait_for_lease = true
-    network        = "default/homelab-network"
-    type           = "bridge"
+    wait_for_lease = true    type           = "bridge"
   }
 
   disk {
     name       = "bootable"
-    type       = "cdrom"
+    type       = "cd-rom"
     size       = "10Gi"
     bus        = "virtio"
     boot_order = 1
