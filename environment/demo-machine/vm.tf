@@ -25,8 +25,8 @@ resource "harvester_virtualmachine" "alpine" {
   }
 
   disk {
-    name       = "rootdisk"
-    type       = "disk"
+    name       = "bootable"
+    type       = "cdrom"
     size       = "10Gi"
     bus        = "virtio"
     boot_order = 1
