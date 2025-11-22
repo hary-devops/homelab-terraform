@@ -14,3 +14,21 @@ variable "docker_host_ip" {
   type        = string
   default     = "192.168.18.28"
 }
+
+variable "agent_pool_id" {
+  description = "Terraform Cloud agent pool ID"
+  type        = string
+}
+
+variable "checkov_run_task_url" {
+  description = "Checkov run task webhook URL"
+  type        = string
+  default     = ""
+}
+
+variable "checkov_hmac_key" {
+  description = "HMAC key for Checkov run task authentication"
+  type        = string
+  sensitive   = true
+  default     = ""
+}

@@ -1,0 +1,26 @@
+# Uncomment the resources below if you have Terraform Cloud Plus/Enterprise
+# and want to use native run tasks for Checkov
+
+# resource "tfe_organization_run_task" "checkov" {
+#   organization = "homelabhary"
+#   url          = var.checkov_run_task_url
+#   name         = "checkov-security-scan"
+#   enabled      = true
+#   description  = "Checkov security and compliance scanning"
+#   hmac_key     = var.checkov_hmac_key
+# }
+
+# resource "tfe_workspace_run_task" "homelab_db_checkov" {
+#   workspace_id      = tfe_workspace.homelab_db.id
+#   task_id           = tfe_organization_run_task.checkov.id
+#   enforcement_level = "advisory"
+#   stages            = ["pre_plan"]
+# }
+
+# resource "tfe_policy_set" "homelab_security" {
+#   name         = "homelab-security-policies"
+#   description  = "Security and compliance policies"
+#   organization = "homelabhary"
+#   kind         = "sentinel"
+#   workspace_ids = [tfe_workspace.homelab_db.id]
+# }
