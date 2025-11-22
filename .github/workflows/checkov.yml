@@ -23,7 +23,8 @@ jobs:
           # For stricter enforcement, set to false
 
       - name: Upload Checkov results
-        uses: github/codeql-action/upload-sarif@v2
+        uses: github/codeql-action/upload-sarif@v3
         if: always()
         with:
           sarif_file: results.sarif
+        continue-on-error: true  # Don't fail if SARIF upload has issues
