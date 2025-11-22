@@ -9,4 +9,6 @@ terraform {
 
 provider "tfe" {
   hostname = "app.terraform.io"
+  # Token will be read from TFE_TOKEN environment variable
+  # Set this in Terraform Cloud workspace as an environment variable
 }
