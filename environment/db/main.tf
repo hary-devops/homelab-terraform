@@ -11,6 +11,6 @@ resource "docker_container" "app" {
 
   ports {
     internal = 80
-    external = 8080
+    external = 8333
   }
 }
