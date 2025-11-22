@@ -1,4 +1,13 @@
 terraform {
+
+  cloud {
+
+    organization = "homelabhary"
+
+    workspaces {
+      name = "argocd"
+    }
+  }
   required_providers {
     docker = {
       source  = "kreuzwerker/docker"
