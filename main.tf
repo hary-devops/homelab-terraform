@@ -1,5 +1,5 @@
 resource "tfe_workspace" "argocd" {
   name              = "argocd"
-  organization      = "homelab"
+  organization      = "homelabhary"
   working_directory = "environment/argocd"
 }
