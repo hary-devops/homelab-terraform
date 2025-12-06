@@ -5,7 +5,13 @@ resource "google_project_service" "monitoring_api" {
   project = var.project_id
   service = "monitoring.googleapis.com"
 
-  disable_on_destroy = false
+  disable_dependent_services = true
+  disable_on_destroy         = false
+
+  timeouts {
+    create = "10m"
+    update = "10m"
+  }
 }
 
 # Cloud Pub/Sub API (required for notification channels)
@@ -13,7 +19,13 @@ resource "google_project_service" "pubsub_api" {
   project = var.project_id
   service = "pubsub.googleapis.com"
 
-  disable_on_destroy = false
+  disable_dependent_services = true
+  disable_on_destroy         = false
+
+  timeouts {
+    create = "10m"
+    update = "10m"
+  }
 }
 
 # Compute Engine API (required for VM instances)

@@ -23,6 +23,11 @@ resource "google_monitoring_alert_policy" "cpu_critical" {
   project      = var.project_id
   combiner     = "OR"
 
+  depends_on = [
+    google_project_service.monitoring_api,
+    google_project_service.pubsub_api
+  ]
+
   conditions {
     display_name = "CPU utilization above 85% for 5 minutes"
 
