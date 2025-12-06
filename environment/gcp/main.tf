@@ -63,6 +63,9 @@ resource "google_compute_instance" "vm_instance" {
 
   tags = ["ssh"]
 
+  # Ensure Compute API is enabled before creating instance
+  depends_on = [google_project_service.compute_api]
+
   boot_disk {
     initialize_params {
       image = var.os_image  # Ubuntu 22.04 LTS

@@ -9,6 +9,12 @@ resource "google_monitoring_notification_channel" "email" {
   }
 
   enabled = true
+
+  # Ensure APIs are enabled before creating notification channel
+  depends_on = [
+    google_project_service.monitoring_api,
+    google_project_service.pubsub_api
+  ]
 }
 
 # Alert Policy - CPU Usage Critical
