@@ -4,15 +4,15 @@ variable "project_id" {
 }
 
 variable "region" {
-  description = "GCP region (asia-southeast1 for Singapore or asia-southeast2 for Jakarta)"
-  type        = string
-  default     = "asia-southeast1" # Singapore
+    description = "GCP region (asia-southeast1 for Singapore or asia-southeast2 for Jakarta)"
+    type        = string
+    default     = "asia-southeast2" # Jakarta
 }
 
 variable "zone" {
-  description = "GCP zone"
-  type        = string
-  default     = "asia-southeast1-a" # Singapore zone
+    description = "GCP zone"
+    type        = string
+    default     = "asia-southeast2-a" # Jakarta zone
 }
 
 variable "instance_name" {
