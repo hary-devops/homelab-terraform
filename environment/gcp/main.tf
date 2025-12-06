@@ -84,7 +84,18 @@ resource "google_compute_instance" "vm_instance" {
     ssh-keys = var.ssh_public_key != "" ? "${var.ssh_user}:${var.ssh_public_key}" : null
   }
 
-  metadata_startup_script = var.startup_script
+  metadata_startup_script = var.startup_script != "" ? var.startup_script : <<-EOF
+    #!/bin/bash
+    # Install Cloud Ops Agent for enhanced monitoring
+    curl -sSO https://dl.google.com/cloudagents/add-google-cloud-ops-agent-repo.sh
+    sudo bash add-google-cloud-ops-agent-repo.sh --also-install
+    
+    # Configure ops agent to collect system metrics
+    sudo systemctl enable google-cloud-ops-agent
+    sudo systemctl start google-cloud-ops-agent
+    
+    echo "Cloud Ops Agent installed successfully"
+  EOF
 
   labels = {
     environment = "homelab"
