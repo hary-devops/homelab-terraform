@@ -4,11 +4,11 @@ data "tfe_organization" "homelabhary" {
 
 resource "tfe_project" "homelab_aws_base" {
   name         = "homelab-aws-base"
-  organization = tfe_organization.homelabhary.name
+  organization = data.tfe_organization.homelabhary.name
 }
 
 resource "tfe_workspace" "homelab_aws_base" {
   name         = "homelab-aws-base"
-  organization = tfe_organization.homelabhary.name
+  organization = data.tfe_organization.homelabhary.name
   project_id   = tfe_project.homelab_aws_base.id
 }
