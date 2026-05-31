@@ -1,5 +1,5 @@
 data "tfe_organization" "homelabhary" {
-  name = "homelabhary"
+  name = "harysetiawan23"
 }
 
 data "tfe_project" "homelab_aws_base" {
