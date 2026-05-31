@@ -1,4 +1,12 @@
 terraform {
+  cloud {
+    organization = "harysetiawan23"
+
+    workspaces {
+      name = "homelab-terraform"
+    }
+  }
+
   required_providers {
     tfe = {
       source  = "hashicorp/tfe"
