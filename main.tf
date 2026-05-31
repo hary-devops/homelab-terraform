@@ -1,6 +1,5 @@
-resource "tfe_organization" "homelabhary" {
-  name = "homelabhary"
-  email = "agus.hary16@gmail.com"
+data "tfe_organization" "homelabhary" {
+  name = "harysetiawan23"
 }
 
 resource "tfe_project" "homelab_aws_base" {
