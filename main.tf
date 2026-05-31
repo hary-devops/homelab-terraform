@@ -13,7 +13,7 @@ resource "tfe_workspace" "homelab_aws_base" {
   project_id   = tfe_project.homelab_aws_base.id
   vcs_repo {
     github_app_installation_id = var.github_app_installation_id
-    identifier                 = "hary-devops/homelab-terraform"
+    identifier                 = "homelab-terraform"
     branch                     = "main"
   }
 }
