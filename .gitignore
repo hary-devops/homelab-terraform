@@ -2,3 +2,4 @@
 .DS*
 **/.ssh/id_rsa
 **/.ssh/id_rsa.pub
+**tfvars
