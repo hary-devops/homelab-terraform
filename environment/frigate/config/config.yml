@@ -1,0 +1,32 @@
+mqtt:
+  enabled: true
+
+camera_groups:
+  homelab:
+    cameras:
+      - cam_entrance
+    icon: LuCamera
+    order: 0
+
+cameras:
+  cam_entrance:
+    ffmpeg:
+      inputs:
+        - path: rtsp://admin:BRATXS@192.168.1.36:554/Streaming/channels/101
+          roles:
+            - detect
+            - record
+    detect:
+      enabled: true
+      width: 1920
+      height: 1080
+      fps: 5
+    record:
+      enabled: true
+      retain:
+        days: 7
+        mode: all
+    snapshots:
+      enabled: true
+      retain:
+        default: 7

@@ -18,3 +18,20 @@ resource "tfe_workspace" "homelab_aws_base" {
     branch                     = "main"
   }
 }
+
+resource "tfe_project" "homelab_frigate" {
+  name         = "homelab-frigate"
+  organization = data.tfe_organization.homelabhary.name
+}
+
+resource "tfe_workspace" "homelab_frigate" {
+  name              = "homelab_frigate"
+  organization      = data.tfe_organization.homelabhary.name
+  project_id        = tfe_project.homelab_frigate.id
+  working_directory = "/environment/frigate"
+  vcs_repo {
+    github_app_installation_id = var.github_app_installation_id
+    identifier                 = "hary-devops/homelab-terraform"
+    branch                     = "main"
+  }
+}
